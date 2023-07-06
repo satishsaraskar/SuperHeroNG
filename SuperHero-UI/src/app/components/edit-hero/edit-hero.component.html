@@ -1,0 +1,42 @@
+<div class="b-example-divider"></div>
+<div *ngIf="hero" class=" bg-light p-2 rounded px-4 pt-5 my-5 border-bottom ">
+
+  <div class=" text-center">
+    <h2>{{hero.name}}</h2>
+  </div>
+  <div class="m-4">
+      <div class="mb-3 row d-sm-flex justify-content-sm-center">
+    <label class="col-sm-2 col-form-label">Name :</label>
+    <div class="col-sm-3">
+      <input type="text" class="form-control"  [(ngModel)]="hero.name" >
+    </div>
+  </div>
+
+    <div class="mb-3 row d-sm-flex justify-content-sm-center">
+      <label class="col-sm-2 col-form-label"> first Name :</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control"  [(ngModel)]="hero.firstName" >
+      </div>
+    </div>
+    <div class="mb-3 row d-sm-flex justify-content-sm-center">
+      <label class="col-sm-2 col-form-label"> Last Nmae:</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control"  [(ngModel)]="hero.lastName" >
+      </div>
+    </div>
+    <div class="mb-3 row d-sm-flex justify-content-sm-center">
+      <label class="col-sm-2 col-form-label"> Plase :</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control"  [(ngModel)]="hero.place" >
+      </div>
+    </div>
+  </div>
+
+
+
+    <div class="gap-2 d-sm-flex justify-content-sm-center mb-5">
+  <button type="button" class="btn btn-outline-success" (click)="updateHero(hero)" *ngIf="hero.id">save</button>
+  <button  type="button" class="btn btn-outline-danger" (click)="deleteHero(hero)" *ngIf="hero.id">Delete</button>
+  <button  type="button" class="btn btn-outline-primary" (click)="createHero(hero)" *ngIf="!hero.id">Create</button>
+</div>
+</div>
